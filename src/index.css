@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'Aquire';
+    src: url('./Fonts/Aquire.otf');
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'Aquatico';
+    src: url("./Fonts/Aquatico\ 400.otf");
+}
+@font-face {
+    font-family: 'Liquido' ;
+    src: url("./Fonts/LIQUIDO\ Fluid\ 400.otf");
+}
+@font-face {
+    font-family: 'Munich';
+    src: url("./Fonts/MUNICH\ \ Regular\ 400.ttf");
+}
+@font-face {
+    font-family: 'Nordic';
+    src: url("./Fonts/Nordic\ Alternative\ 400.ttf");
+}
+.main-title{
+    animation: title_animate 10s linear infinite;
+}
+@keyframes title_animate {
+    0%{
+        font-family: 'Aquire' sans-serif;
+    }
+    20%{
+        font-family: 'Aquatico' sans-serif;
+    }
+    40% {
+        font-family: 'Liquido' sans-serif;
+    }
+    60% {
+        font-family: 'Munich' sans-serif;
+        }
+    80% {
+        font-family: 'Nordic' sans-serif;
+        }
+    100% {
+        font-family: 'Aquatico' sans-serif;
+        }
 }
