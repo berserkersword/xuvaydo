@@ -5,7 +5,11 @@ import { useState } from 'react';
 import OutlineButton from './OutlineButton'
 import Button from './Button';
 import MainButton from './MainButton';
-const Navbar = () => {
+import { UserCredential } from 'firebase/auth';
+import { SignOut } from '../hooks';
+
+
+const Navbar = ( props:{isAuth:boolean,user:UserCredential | undefined ,} ) => {
   const [toggle, setToggle] = useState(false)
   return (
     <nav className=" px-2 sm:px-4 py-2.5 sticky top-0 bg-[rgba(255,242,173,0.3)]">
@@ -29,7 +33,10 @@ const Navbar = () => {
             <li>
               <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-white md:border-0  md:p-0 "><Button text='Service' /></Link>
             </li>
-            <li>
+            {
+              props.isAuth ?
+                (<>
+                  <li>
               <Link to="/login" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-white md:border-0  md:p-0 "><MainButton text='Kirish' /></Link>
             </li>
             <li>
@@ -37,6 +44,8 @@ const Navbar = () => {
                 <OutlineButton text='Ro`yxatdan o`tish'/>
               </Link>
             </li>
+                </>) : <div><OutlineButton text='Akkauntdan chiqish' action={() => { SignOut(); window.location.pathname='/login'}} /></div>
+            }
           </ul>
         </div>
       </div>
