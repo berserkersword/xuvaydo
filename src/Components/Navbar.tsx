@@ -2,7 +2,9 @@ import Logo from '../Assets/Logo.png'
 import { Link } from 'react-router-dom';
 import { Divide as Collapse } from 'hamburger-react';
 import { useState } from 'react';
-
+import OutlineButton from './OutlineButton'
+import Button from './Button';
+import MainButton from './MainButton';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   return (
@@ -19,19 +21,21 @@ const Navbar = () => {
             <div className={`w-full md:block md:w-auto ${toggle?'block':'hidden'}`} id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 border   md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800  rounded hover:text-[#FFF2AD] md:p-0" aria-current="page">Home</Link>
+              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800  rounded hover:text-white md:p-0" aria-current="page"><Button text='Home' /></Link>
             </li>
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-[#FFF2AD] md:border-0  md:p-0 ">About</Link>
+              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-white md:border-0  md:p-0 "><Button text='About' /></Link>
             </li>
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-[#FFF2AD] md:border-0  md:p-0 ">Services</Link>
+              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-white md:border-0  md:p-0 "><Button text='Service' /></Link>
             </li>
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-[#FFF2AD] md:border-0  md:p-0 ">Pricing</Link>
+              <Link to="/login" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-white md:border-0  md:p-0 "><MainButton text='Kirish' /></Link>
             </li>
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-gray-800 rounded hover:text-[#FFF2AD] md:border-0  md:p-0 ">Contact</Link>
+              <Link to="/signup" className="flex justify-center items-center  text-gray-800 rounded hover:text-[#FFF2AD] md:border-0  md:p-0 ">
+                <OutlineButton text='Ro`yxatdan o`tish'/>
+              </Link>
             </li>
           </ul>
         </div>
